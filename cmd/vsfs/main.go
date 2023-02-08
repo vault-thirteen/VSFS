@@ -42,7 +42,7 @@ func mustBeNoError(err error) {
 func listen(cliArguments *cli.Arguments) (err error) {
 	router := httprouter.New()
 
-	router.ServeFiles("/files/*filepath", http.Dir(cliArguments.SharedFolderPath))
+	router.ServeFiles("/*filepath", http.Dir(cliArguments.SharedFolderPath))
 
 	httpServer := http.Server{
 		Addr: net.JoinHostPort(
