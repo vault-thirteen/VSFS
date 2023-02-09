@@ -1,5 +1,6 @@
 # VSFS
-Very Simple File Server
+
+## Very Simple File Server
 
 ### Installation
 `go install github.com/vault-thirteen/VSFS/cmd/vsfs@latest`
