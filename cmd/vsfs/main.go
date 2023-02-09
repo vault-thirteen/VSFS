@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/vault-thirteen/vsfs/pkg/models/cli"
+	"github.com/vault-thirteen/VSFS/pkg/models/cli"
 )
 
 // Command Line Interface Arguments.

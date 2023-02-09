@@ -1,4 +1,4 @@
-module github.com/vault-thirteen/vsfs
+module github.com/vault-thirteen/VSFS
 
 go 1.19
 
