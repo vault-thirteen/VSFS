@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 	"github.com/vault-thirteen/VSFS/pkg/models/cli"
+	"github.com/vault-thirteen/Versioneer"
 )
 
 // Command Line Interface Arguments.
@@ -18,9 +20,9 @@ const (
 )
 
 func main() {
-	var err error
-	var cliArguments *cli.Arguments
-	cliArguments, err = cli.NewArgumentsFromOs(
+	showIntro()
+
+	cliArguments, err := cli.NewArgumentsFromOs(
 		ArgumentNameServerListenHost,
 		ArgumentNameServerListenPort,
 		ArgumentNameSharedFolderPath,
@@ -37,6 +39,14 @@ func mustBeNoError(err error) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func showIntro() {
+	versioneer, err := ver.New()
+	mustBeNoError(err)
+	versioneer.ShowIntroText("Server")
+	versioneer.ShowComponentsInfoText()
+	fmt.Println()
 }
 
 func listen(cliArguments *cli.Arguments) (err error) {
