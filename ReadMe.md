@@ -1,9 +1,11 @@
 # VSFS
 
-## Very Simple File Server
+### Very Simple File Server
 
-### Installation
+This server provides read-only access to shared files using the HTTP interface.
+
+## Installation
 `go install github.com/vault-thirteen/VSFS/cmd/vsfs@latest`
 
-### Usage Example
+## Usage Example
 `vsfs -host=0.0.0.0 -port=2000 -folder="D:\Files"`

@@ -10,8 +10,7 @@ const (
 	ErrFServerListenHost       = "host name is not valid: '%v'"
 	ErrFServerListenPort       = "port is not valid: '%v'"
 	ErrFServerSharedFolderPath = "shared folder is not valid: '%v'"
-
-	ErrNullPointer = "null pointer"
+	ErrNullPointer             = "null pointer"
 )
 
 type Arguments struct {
@@ -20,7 +19,7 @@ type Arguments struct {
 	SharedFolderPath string
 }
 
-func (a *Arguments) IsValid() (bool, error) {
+func (a *Arguments) IsValid() (ok bool, err error) {
 	if len(a.ServerListenHost) < 1 {
 		return false, fmt.Errorf(ErrFServerListenHost, a.ServerListenHost)
 	}
@@ -37,13 +36,13 @@ func (a *Arguments) IsValid() (bool, error) {
 }
 
 func NewArgumentsFromOs(
-	argumentNameServerListenHost string,
-	argumentNameServerListenPort string,
-	argumentNameSharedFolderPath string,
+	listenServerHostName string,
+	listenServerPortNumber string,
+	sharedFolderPath string,
 ) (args *Arguments, err error) {
-	serverListenHostPtr := flag.String(argumentNameServerListenHost, "", "Host name of the server")
-	serverListenPortPtr := flag.Uint(argumentNameServerListenPort, 0, "Port number of the server")
-	sharedFolderPathPtr := flag.String(argumentNameSharedFolderPath, "", "Path to the shared folder")
+	serverListenHostPtr := flag.String(listenServerHostName, "", "Host name of the server")
+	serverListenPortPtr := flag.Uint(listenServerPortNumber, 0, "Port number of the server")
+	sharedFolderPathPtr := flag.String(sharedFolderPath, "", "Path to the shared folder")
 
 	flag.Parse()
 
