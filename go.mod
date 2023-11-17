@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/julienschmidt/httprouter v1.3.0
-	github.com/vault-thirteen/Versioneer v0.9.0
+	github.com/vault-thirteen/Versioneer v0.10.0
 )
 
 require (
