@@ -9,7 +9,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 	"github.com/vault-thirteen/VSFS/pkg/models/cli"
-	"github.com/vault-thirteen/Versioneer"
+	"github.com/vault-thirteen/auxie/Versioneer"
 )
 
 // Command Line Interface Arguments.
