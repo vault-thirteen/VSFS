@@ -4,7 +4,7 @@ go 1.24.9
 
 require (
 	github.com/julienschmidt/httprouter v1.3.0
-	github.com/vault-thirteen/auxie v0.29.0
+	github.com/vault-thirteen/auxie v0.30.0
 )
 
 require (
