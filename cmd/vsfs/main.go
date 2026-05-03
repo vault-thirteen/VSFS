@@ -8,8 +8,9 @@ import (
 	"strconv"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/vault-thirteen/VSFS/pkg/models/cli"
 	ver "github.com/vault-thirteen/auxie/Versioneer/classes/Versioneer"
+
+	"github.com/vault-thirteen/VSFS/pkg/models/cli"
 )
 
 // Command Line Interface Arguments.
@@ -42,7 +43,7 @@ func mustBeNoError(err error) {
 }
 
 func showIntro() {
-	versioneer, err := ver.New()
+	versioneer, err := ver.New(false)
 	mustBeNoError(err)
 	versioneer.ShowIntroText("Server")
 	versioneer.ShowComponentsInfoText()
