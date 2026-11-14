@@ -1,10 +1,10 @@
 module github.com/vault-thirteen/VSFS
 
-go 1.26.10
+go 1.27.4
 
 require (
 	github.com/julienschmidt/httprouter v1.3.0
-	github.com/vault-thirteen/auxie v0.43.2
+	github.com/vault-thirteen/auxie v0.45.0
 )
 
 require (
